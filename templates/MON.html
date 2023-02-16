@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transaction History
+{% endblock %}
+
+{% block main %}
+    <h2>Transaction History</h2>
+    <br>
+    <table>
+        <tr>
+            <th>Stock Name</th>
+            <th>Stock Symbol</th>
+            <th>Amount</th>
+            <th>Sell/Buy</th>
+            <th>Date</th>
+        </tr>
+        {% for trans in his_dic %}
+            <tr>
+                <td>{{ trans["name"] }}</td>
+                <td>{{ trans["stock_sybl"] }}</td>
+                <td>{{ trans["num_stk"] }}</td>
+                <td>{{ trans["sel_by"] }}</td>
+                <td>{{ trans["ts"] }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+{% endblock %}
